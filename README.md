@@ -8,7 +8,7 @@ It ships as a **single self-contained binary** — no Python, no runtime, no
 internet connection required. On a normal desktop login it needs **no sudo**,
 because logind/polkit already lets the active user power off.
 
-![Shutdown Timer](icon.png)
+<img src="https://raw.githubusercontent.com/cynd22/shutdown-timer/v1.0.2/icon.png" alt="Shutdown Timer" width="96">
 
 ## Install (easiest)
 
