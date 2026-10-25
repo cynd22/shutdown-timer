@@ -3,6 +3,7 @@ name: Test and build
 on:
   push:
     branches: [master]
+    tags: ['v*']
   pull_request:
   workflow_dispatch:
 
@@ -25,7 +26,12 @@ jobs:
           LANG: en_US.UTF-8
         run: make test
       - name: Package Linux x86_64 app
-        run: make package VERSION="${GITHUB_REF_NAME}-${GITHUB_SHA::7}"
+        run: |
+          build_version="${GITHUB_REF_NAME}-${GITHUB_SHA::7}"
+          if [[ "$GITHUB_REF_TYPE" == "tag" ]]; then
+            build_version="${GITHUB_REF_NAME#v}"
+          fi
+          make package VERSION="$build_version"
       - uses: actions/upload-artifact@v7
         with:
           name: ShutdownTimer-linux-x86_64
