@@ -1,0 +1,9 @@
+Generated with the built-in image_gen tool for Shutdown Timer.
+The generated transparent PNG was downsampled to 512x512 for icon.png.
+
+Use case: logo-brand
+Asset type: Linux KDE desktop app icon, square 1024x1024 PNG with a transparent background.
+Primary request: a polished, simple icon for Shutdown Timer that combines a clock countdown and the universal power symbol in one immediately readable mark.
+Subject: a softly rounded midnight-blue circular timer face, a clear white power glyph at its center, a short bright cyan countdown arc around the outside and one tiny cyan clock hand detail integrated into the ring. Keep the power glyph unmistakable.
+Style: refined Breeze-compatible desktop icon, crisp geometric silhouette, subtle depth and restrained highlights, mostly flat. Centered front-on, fills 80 percent of the canvas, works at 32 pixels.
+Constraints: transparent surrounding background, no text, no letters, no numbers, no watermark, no KDE logo, no extra objects, no scene or mockup, one icon only.

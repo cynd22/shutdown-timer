@@ -1,0 +1,33 @@
+name: Test and build
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  linux:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+          cache: true
+      - name: Install desktop build dependencies
+        run: sudo apt-get update && sudo apt-get install -y libgl1-mesa-dev xorg-dev dbus-daemon
+      - name: Test and check
+        env:
+          LANG: en_US.UTF-8
+        run: make test
+      - name: Package Linux x86_64 app
+        run: make package VERSION="${GITHUB_REF_NAME}-${GITHUB_SHA::7}"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: ShutdownTimer-linux-x86_64
+          path: dist/*
+          if-no-files-found: error
