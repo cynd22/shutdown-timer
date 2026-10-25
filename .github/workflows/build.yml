@@ -13,7 +13,7 @@ jobs:
   linux:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-go@v6
         with:
           go-version-file: go.mod
@@ -26,7 +26,7 @@ jobs:
         run: make test
       - name: Package Linux x86_64 app
         run: make package VERSION="${GITHUB_REF_NAME}-${GITHUB_SHA::7}"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: ShutdownTimer-linux-x86_64
           path: dist/*
