@@ -10,16 +10,20 @@ bin_dir="${XDG_BIN_HOME:-$HOME/.local/bin}"
 data_dir="${XDG_DATA_HOME:-$HOME/.local/share}"
 app_dir="$data_dir/applications"
 icon_dir="$data_dir/icons"
+theme_icon_dir="$icon_dir/hicolor/512x512/apps"
 
 if [[ ! -f "$here/shutdown-timer" ]]; then
   echo "No shutdown-timer executable found beside install.sh." >&2
   echo "Extract the release archive, or build the project first." >&2
   exit 1
 fi
-mkdir -p "$bin_dir" "$app_dir" "$icon_dir"
+mkdir -p "$bin_dir" "$app_dir" "$theme_icon_dir"
 
 install -m 755 "$here/shutdown-timer" "$bin_dir/shutdown-timer"
-[ -f "$here/icon.png" ] && install -m 644 "$here/icon.png" "$icon_dir/shutdown-timer.png"
+if [[ -f "$here/icon.png" ]]; then
+  install -m 644 "$here/icon.png" "$icon_dir/shutdown-timer.png"
+  install -m 644 "$here/icon.png" "$theme_icon_dir/shutdown-timer.png"
+fi
 
 # Quote the executable as one argument, then escape the Desktop Entry string.
 exec_path="$bin_dir/shutdown-timer"

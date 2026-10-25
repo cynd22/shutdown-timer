@@ -59,6 +59,7 @@ Delete:
     ~/.local/bin/shutdown-timer
     ~/.local/share/applications/shutdown-timer.desktop
     ~/.local/share/icons/shutdown-timer.png
+    ~/.local/share/icons/hicolor/512x512/apps/shutdown-timer.png
 
 If you installed with XDG_DATA_HOME / XDG_BIN_HOME overrides, use those
 locations instead. See the repository README for building and testing.

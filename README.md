@@ -120,7 +120,8 @@ launcher. Its generation prompt is in [assets/icon-prompt.txt](assets/icon-promp
 ```bash
 rm -f ~/.local/bin/shutdown-timer \
       ~/.local/share/applications/shutdown-timer.desktop \
-      ~/.local/share/icons/shutdown-timer.png
+      ~/.local/share/icons/shutdown-timer.png \
+      ~/.local/share/icons/hicolor/512x512/apps/shutdown-timer.png
 ```
 
 The installer respects `XDG_DATA_HOME`; `XDG_BIN_HOME` optionally overrides
